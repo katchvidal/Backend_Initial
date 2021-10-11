@@ -1,6 +1,6 @@
 #   Backend Server
 
-    #Backend Server Developed con TypeScript, Node JS, Apollo Server y GraphQL
+    #BACKEND SERVER DEVELOPED WITH TYPESCRIPT NODE JS APOLLO SERVER Y GRAPHQL - 11-10-21
 
 
     *   NPM INSTALL -> PARA DESCARGAR LAS DEPENDECIAS
