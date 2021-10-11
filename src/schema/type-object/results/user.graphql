@@ -1,0 +1,12 @@
+
+" Respuesta del Servidor a la busqueda de Usuarios "
+type ResultUsers implements Result {
+
+    "Estado de la Operacion"
+    status: Boolean!
+    "Mensaje de la Operacion para dar FeedBack"
+    message: String!
+    "Array de Usuarios o Usuario"
+    users: [ User ]
+
+}

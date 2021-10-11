@@ -1,0 +1,12 @@
+
+" Como debe lucir una respuesta del backend al Agregar un Usuario"
+type ResultAddUser implements Result {
+
+    "Estado de la Operacion"
+    status: Boolean!
+    "Mensaje de la Operacion para dar FeedBack"
+    message: String!
+    "Informacion del Usuario que se ha registrado"
+    user: User
+
+}

@@ -1,0 +1,9 @@
+
+
+" Input para Hacer Login "
+input LoginInput {
+
+    email: String!
+    password: String!
+    
+}

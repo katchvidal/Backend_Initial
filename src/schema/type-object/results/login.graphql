@@ -1,0 +1,14 @@
+
+" Como debe lucir una respuesta del backend al Hacer un Loggin Correcto "
+type ResultLogin implements Result {
+
+    "Estado de la Operacion"
+    status: Boolean!
+
+    "Mensaje de la Operacion para dar FeedBack"
+    message: String!
+
+    "Informacion del Usuario que se ha registrado"
+    token: String!
+
+}

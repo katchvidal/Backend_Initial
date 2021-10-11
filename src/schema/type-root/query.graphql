@@ -1,0 +1,10 @@
+" Aqui van todas las Consultas Query -> Del Proyecto "
+type Query {
+
+    "Lista de Usuarios Registrados en la base de datos"
+    users: ResultUsers
+
+    " Login de Usuarios"
+    login(input: LoginInput): ResultLogin
+    
+}

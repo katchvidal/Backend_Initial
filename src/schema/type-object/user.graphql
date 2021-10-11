@@ -1,0 +1,21 @@
+
+"Tipo de Usuario -> Como debe lucir un Usuario en la base de datos"
+type User {
+    "IDENTIFICADOR DE MONGODATABASE"
+    _id: ID
+    "NOMBRE DEL USUARIO"
+    name: String
+    "APELLIDO DEL USUARIO"
+    lastname: String
+    "EMAIL DEL USUARIO Y USERNAME"
+    email: String
+    "CONTRASEÑA DE USUARIO"
+    password: String
+    "FECHA DE NACIMIENTO"
+    birthDay: String
+    "FECHA DE REGISTRO"
+    createAT: String
+    "Rol de Usuario -> Admin o Cliente"
+    role: Role!
+    
+}
