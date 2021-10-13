@@ -2,5 +2,8 @@
 " Aqui van los Mutations -> Interacciones con la Base de Datos "
 type Mutation {
     createUser(user: UserInput): ResultAddUser
+
+    " Login de Usuarios"
+    login(input: LoginInput): ResultLogin
     
 }

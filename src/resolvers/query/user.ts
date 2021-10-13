@@ -1,6 +1,8 @@
-import { findElement } from './../../lib/crud.database';
-import { COLLECTIONS } from '../../config/constants';
+import { findElement, findOneElement } from './../../lib/crud.database';
+import { COLLECTIONS, MESSAGES } from '../../config/constants';
 import { IResolvers } from '@graphql-tools/utils';
+import JWT from '../../lib/jsonwebtoken';
+
 
 
 
@@ -24,7 +26,27 @@ const resolverUserQuery: IResolvers = {
         };
       }
     },
-  }
-};
+
+    async user(_, args, { token, db  }){
+
+      let info = new JWT().verify( token );
+      if( info === MESSAGES.TOKEN_VERIFICATION_FAILED ){
+        return{
+          status: false,
+          message: info,
+          user: null,
+        };
+      }   
+      const { email } = Object.values( info )[0];
+      const usuario = await findOneElement( db, COLLECTIONS.USERS, { email }); 
+      return{
+        status : true,
+        message: 'Usuario Autenticado Correctamente Mediante Token',
+        user: usuario
+      };
+      
+    }
+    }
+  };
 
 export default resolverUserQuery;

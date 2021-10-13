@@ -28,16 +28,18 @@ async function server() {
     const db = await database.init();
 
     const context = async({req, connection} : IContext ) => {
+        // -> Verifica si recibe por el header el token console.log( req.headers );
+        
         const token = req ? req.headers.token : connection.token;
-
-        return { db, token };
+        return { db, token };  
     };
     
     const server = new ApolloServer({
         schema,
         introspection:true,
-        context
+        context            
     });
+    
     await server.start();
     server.applyMiddleware({app});
 
