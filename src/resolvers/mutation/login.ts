@@ -14,22 +14,22 @@ const resolverLoginMutation: IResolvers = {
             const { email, password } = input;
             
             const user = await findOneElement( db, COLLECTIONS.USERS, { email });
+            
             if( !user ){
                 return{
+                    message: `No se encuentra registrado: ${ email }`,
                     status: false,
-                    message: 'User not Register, Please Try Again ',
-                    token: false
-                    
+                    token: null
                 };
             }
+            
             const validPassword = bcrypt.compareSync( password, user.password);
 
             if (!validPassword){
                 return{
+                    message: 'Usuario o Contraseña no son validos',
                     status: false,
-                    message: 'Email/Password -> Are incorrect ',
-                    token: false
-                    
+                    token: null
                 };
             }
             
